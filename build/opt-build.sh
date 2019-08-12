@@ -27,7 +27,7 @@ echo $INST_PATH
 INIT_DIR=`pwd`
 
 curl -s https://get.nextflow.io | bash
-mv nextflow $INST_PATH/nextflow
+mv nextflow $INST_PATH/bin/nextflow
 
 export PATH=$PATH:$INST_PATH
 
