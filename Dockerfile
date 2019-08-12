@@ -14,7 +14,7 @@ RUN apt-get install -yq --no-install-recommends \
 #RUN mkdir -p $OPT/bin
 
 ADD build/opt-build.sh build/
-RUN bash build/opt-build.sh /usr/bin/
+RUN bash build/opt-build.sh /usr/
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
