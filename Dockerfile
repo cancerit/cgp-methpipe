@@ -1,9 +1,7 @@
 FROM nfcore/methylseq:1.3
 
-ENV OPT /opt/wtsi-cgp
-ENV PATH $OPT/bin:$PATH
-ENV LD_LIBRARY_PATH $OPT/lib
-ENV LC_ALL C
+#ENV OPT /opt/wtsi-cgp
+#ENV PATH $OPT/bin:$PATH
 
 RUN apt-get -yq update
 RUN apt-get install -yq --no-install-recommends \
@@ -13,10 +11,10 @@ RUN apt-get install -yq --no-install-recommends \
   ca-certificates \
   default-jre
 
-RUN mkdir -p $OPT/bin
+#RUN mkdir -p $OPT/bin
 
 ADD build/opt-build.sh build/
-RUN bash build/opt-build.sh $OPT
+RUN bash build/opt-build.sh /usr/bin/
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
