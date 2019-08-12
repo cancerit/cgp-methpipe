@@ -28,7 +28,3 @@ INIT_DIR=`pwd`
 
 curl -s https://get.nextflow.io | bash
 mv nextflow $INST_PATH/bin/nextflow
-
-export PATH=$PATH:$INST_PATH
-
-nextflow pull http://github.com/nf-core/methylseq -r 1.3
