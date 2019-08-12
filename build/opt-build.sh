@@ -27,6 +27,6 @@ echo $INST_PATH
 INIT_DIR=`pwd`
 
 curl -s https://get.nextflow.io | bash
-mv nextflow $1/nextflow
+mv nextflow $INST_PATH/nextflow
 
 nextflow pull http://github.com/nf-core/methylseq -r 1.3
