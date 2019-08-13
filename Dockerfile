@@ -20,15 +20,22 @@ LABEL maintainer="cgphelp@sanger.ac.uk" \
       description="cgp-methpipe docker"
 
 RUN adduser --disabled-password --gecos '' $USER && chsh -s /bin/bash && mkdir -p /home/$USER
-
-
 RUN mkdir -p $OPT/bin
-ADD build/opt-build.sh build/
-RUN bash build/opt-build.sh $OPT
-RUN chmod -R a+rx $OPT
+
 RUN chmod -R a+rx /opt/conda/bin
+RUN chmod -R a+rwx $OPT
 
 # Become the final user
+USER $USER
+
+WORKDIR /home/$USER
+
+ADD build/opt-build.sh build/
+RUN bash build/opt-build.sh $OPT
+
+USER root
+RUN chmod -R go-w $OPT
+
 USER $USER
 
 WORKDIR /home/$USER
