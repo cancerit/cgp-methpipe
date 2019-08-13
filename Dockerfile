@@ -34,4 +34,5 @@ USER $USER
 WORKDIR /home/$USER
 
 ENV PATH $OPT:/opt/conda/bin:$PATH
+ENV NXF_HOME /home/service/.nextflow
 RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
