@@ -19,7 +19,8 @@ LABEL maintainer="cgphelp@sanger.ac.uk" \
       version="v1.0.0" \
       description="cgp-methpipe docker"
 
-RUN adduser --home /$USER --disabled-password --gecos '' $USER
+RUN adduser --disabled-password --gecos '' $USER && chsh -s /bin/bash && mkdir -p /home/$USER
+
 
 RUN mkdir -p $OPT/bin
 ADD build/opt-build.sh build/
@@ -30,7 +31,7 @@ RUN chmod -R a+rx /opt/conda/bin
 # Become the final user
 USER $USER
 
-WORKDIR /$USER
+WORKDIR /home/$USER
 
 ENV PATH $OPT:/opt/conda/bin:$PATH
 RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
