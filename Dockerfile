@@ -24,8 +24,8 @@ RUN adduser --home /$USER --disabled-password --gecos '' $USER
 RUN mkdir -p $OPT/bin
 ADD build/opt-build.sh build/
 RUN bash build/opt-build.sh $OPT
-RUN chown -R $USER:$USER $OPT
-
+RUN chmod -R a+rx $OPT
+RUN chmod -R a+rx /opt/conda/bin
 
 # Become the final user
 USER $USER
