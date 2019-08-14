@@ -22,24 +22,17 @@ LABEL maintainer="cgphelp@sanger.ac.uk" \
 RUN adduser --disabled-password --gecos '' $USER && chsh -s /bin/bash && mkdir -p /home/$USER
 RUN mkdir -p $OPT/bin
 
+ADD build/opt-build.sh build/
+RUN bash build/opt-build.sh $OPT
+
 RUN chmod -R a+rx /opt/conda/bin
-RUN chmod -R a+rwx $OPT
+RUN chmod -R a+rx $OPT
 
 # Become the final user
 USER $USER
 
 WORKDIR /home/$USER
 
-ADD build/opt-build.sh build/
-RUN bash build/opt-build.sh $OPT
-
-USER root
-RUN chmod -R go-w $OPT
-
-USER $USER
-
-WORKDIR /home/$USER
-
 ENV PATH $OPT:/opt/conda/bin:$PATH
-ENV NXF_HOME /home/service/.nextflow
 RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
+RUN touch .nextflow/dockerized
