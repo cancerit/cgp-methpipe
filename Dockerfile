@@ -36,6 +36,7 @@ USER $USER
 WORKDIR /home/$USER
 
 ENV PATH $OPT:/opt/conda/bin:$PATH
+ENV DISPLAY :0
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 RUN git clone --branch 1.3 https://github.com/nf-core/methylseq.git
