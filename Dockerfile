@@ -4,6 +4,8 @@ ENV OPT /opt/wtsi-cgp
 ENV PATH $OPT/bin:$PATH
 ENV LD_LIBRARY_PATH $OPT/lib
 ENV LC_ALL C
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 ENV USER=service
 
 RUN apt-get -yq update
@@ -34,8 +36,9 @@ USER $USER
 WORKDIR /home/$USER
 
 ENV PATH $OPT:/opt/conda/bin:$PATH
+ENV LC_ALL C.UTF-8
+ENV LANG C.UTF-8
 RUN git clone --branch 1.3 https://github.com/nf-core/methylseq.git
-ENV PATH $OPT:/home/users/methylseq/bin:/opt/conda/bin:$PATH
 
 #RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
 #RUN touch .nextflow/dockerized
