@@ -35,5 +35,7 @@ WORKDIR /home/$USER
 
 ENV PATH $OPT:/opt/conda/bin:$PATH
 RUN git clone --branch 1.3 https://github.com/nf-core/methylseq.git
-RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
-RUN touch .nextflow/dockerized
+ENV PATH $OPT:/home/users/methylseq/bin:/opt/conda/bin:$PATH
+
+#RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
+#RUN touch .nextflow/dockerized
