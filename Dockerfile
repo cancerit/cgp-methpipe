@@ -1,4 +1,4 @@
-FROM nfcore/methylseq:1.3
+FROM nfcore/methylseq:1.4
 
 ENV OPT /opt/wtsi-cgp
 ENV PATH $OPT/bin:$PATH
@@ -39,7 +39,7 @@ ENV PATH $OPT:/opt/conda/bin:$PATH
 ENV DISPLAY :0
 ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
-RUN git clone --branch 1.3 https://github.com/nf-core/methylseq.git
+RUN git clone --branch 1.4 https://github.com/nf-core/methylseq.git
 
 #RUN nextflow pull http://github.com/nf-core/methylseq -r 1.3
 #RUN touch .nextflow/dockerized
