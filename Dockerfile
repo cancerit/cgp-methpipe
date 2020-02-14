@@ -18,7 +18,7 @@ RUN apt-get install -yq --no-install-recommends \
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
-      version="v1.0.0" \
+      version="v1.4.0" \
       description="cgp-methpipe docker"
 
 RUN adduser --disabled-password --gecos '' $USER && chsh -s /bin/bash && mkdir -p /home/$USER
