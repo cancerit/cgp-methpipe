@@ -21,7 +21,7 @@ RUN npm install -g standalone-html
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
-      version="1.4.0" \
+      version="1.4.1" \
       description="cgp-methpipe docker"
 
 RUN adduser --disabled-password --gecos '' $USER && chsh -s /bin/bash && mkdir -p /home/$USER
