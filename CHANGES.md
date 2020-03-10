@@ -1,6 +1,6 @@
 # CHANGES
 
-## NEXT
+## 1.4.1
 
 * Add nodejs and standalone-html package for packing html pages
 
