@@ -9,12 +9,15 @@ ENV LANG C.UTF-8
 ENV USER=service
 
 RUN apt-get -yq update
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -yq --no-install-recommends \
   build-essential\
   apt-transport-https\
   curl\
   ca-certificates \
-  default-jre
+  default-jre \
+  nodejs
+RUN npm install -g standalone-html
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
