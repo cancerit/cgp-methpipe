@@ -33,6 +33,7 @@ RUN bash build/opt-build.sh $OPT
 RUN chmod -R a+rx /opt/conda/bin
 RUN chmod -R a+rx $OPT
 
+COPY ./bin/ $OPT/bin/
 # Become the final user
 USER $USER
 
