@@ -8,11 +8,11 @@ usage()
     echo "usage: runMethPipe  output-dir fastq1 fastq2 reference-dir [ number-of-CPUs ]"
 }
 
-if ! [[ "$#" == 4 || "$#" == 5 ]] ; then
+if [ "$#" -lt 4 ] ; then
   echo
   usage
   echo
-  exit 1
+  exit
 fi
 
 OUTD=$1
@@ -25,9 +25,6 @@ if [ -z "$5" ]; then
   else
   CPUs=$5
 fi
-
-echo $CPUs
-exit
 
 if [ ! -d "$OUTD" ]; then
   echo "Output directory not found"
