@@ -10,6 +10,7 @@ services:
   - docker
 
 script:
+ - set -e
  - echo 'Build and check docker image'
  - docker build -t methpipe .
  - docker images | grep -c methpipe
