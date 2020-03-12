@@ -14,5 +14,5 @@ script:
  - docker build -t methpipe .
  - docker images | grep -c methpipe
  - echo 'Verify program(s) from this repo'
- - docker run -t --rm methpipe nextflowo -v
+ - docker run -t --rm methpipe nextflow -v
  - docker run -t --rm methpipe runMethPipe.sh
