@@ -5,10 +5,10 @@
 
 usage()
 {
-    echo "usage: runMethPipe  output-dir fastq1 fastq2 reference-dir"
+    echo "usage: runMethPipe  output-dir fastq1 fastq2 reference-dir [ number-of-CPUs ]"
 }
 
-if [ "$#" -ne 4 ]; then
+if ! [[ "$#" == 4 || "$#" == 5 ]] ; then
   echo
   usage
   echo
@@ -20,7 +20,11 @@ FASTQ1=$2
 FASTQ2=$3
 REF=$4
 
-CPUs=16
+if [ -z "$5" ]; then
+  CPUs=16 #doesn't seem to scale very well beyond this
+  else
+  CPUs=$5
+fi
 
 if [ ! -d "$OUTD" ]; then
   echo "Output directory not found"
@@ -99,8 +103,7 @@ echomsg "Completed qualimap calculation... $(($T1-$T0)) sec."; rm -f $BAMO
 wait $PID1
 
 #methXtract seems to cap off at 12 CPUs
-if [ $CPUs -gt 12 ]
-  then
+if [ $CPUs -gt 12 ]; then
   NCPU=12
   else
   NCPU=$CPUs
