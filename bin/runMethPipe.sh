@@ -12,7 +12,7 @@ if ! [[ "$#" == 4 || "$#" == 5 ]] ; then
   echo
   usage
   echo
-  exit
+  exit 1
 fi
 
 OUTD=$1
@@ -25,6 +25,9 @@ if [ -z "$5" ]; then
   else
   CPUs=$5
 fi
+
+echo $CPUs
+exit
 
 if [ ! -d "$OUTD" ]; then
   echo "Output directory not found"
