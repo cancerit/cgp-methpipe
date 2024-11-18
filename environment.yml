@@ -1,0 +1,69 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # Specify python version
+  - python=2.7
+  # Existing depenedencies
+  - bioconda::fastqc=0.11.8
+  - conda-forge::r-markdown=1.1
+  - bioconda::trim-galore=0.6.4
+  - bioconda::samtools=1.9
+  - bioconda::bowtie2=2.3.5
+  - bioconda::hisat2=2.1.0
+  - bioconda::bismark=0.22.2
+  - bioconda::qualimap=2.2.2c
+  - bioconda::preseq=2.0.3
+  - bioconda::multiqc=1.7
+  - bioconda::picard=2.21.3
+  - bioconda::bwameth=0.2.2
+  - bioconda::methyldackel=0.4.0
+  # Python-specific dependencies
+  - backports=1.0
+  - backports.functools_lru_cache=1.6.1
+  - backports_abc=0.5
+  - bz2file=0.98
+  - certifi=2019.9.11
+  - cffi=1.13.2
+  - chardet=3.0.4
+  - click=7.0
+  - colormath=3.0.0
+  - cryptography=2.8
+  - cycler=0.10.0
+  - decorator=4.4.1
+  - enum34=1.1.6
+  - functools32=3.2.3.2
+  - future=0.18.2
+  - futures=3.3.0
+  - idna=2.8
+  - ipaddress=1.0.23
+  - jinja2=2.10.3
+  - kiwisolver=1.1.0
+  - markdown=3.1.1
+  - markupsafe=1.1.1
+  - matplotlib=2.2.4
+  - matplotlib-base=2.2.4
+  - networkx=2.2
+  - numpy=1.16.5
+  - pycparser=2.19
+  - pyopenssl=19.0.0
+  - pyparsing=2.4.5
+  - pyqt=5.12.3
+  - pysocks=1.7.1
+  - python=2.7.15
+  - python-dateutil=2.8.1
+  - pytz=2019.3
+  - pyyaml=5.1.2
+  - requests=2.22.0
+  - setuptools=41.6.0
+  - simplejson=3.17.0
+  - singledispatch=3.4.0.3
+  - six=1.13.0
+  - spectra=0.0.11
+  - subprocess32=3.5.4
+  - tornado=5.1.1
+  - urllib3=1.25.7
+  - wheel=0.33.6
+  - xopen=0.8.4
