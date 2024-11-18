@@ -10,7 +10,7 @@
 ## 1.4.2
 
 - Added a bash script that runs all the components of the methylseq Nextflow
-  (runMethPipe.sh).
+  (runMethPipe.sh). Note this is untested.
 
 ## 1.4.1
 
