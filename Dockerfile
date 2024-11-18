@@ -2,8 +2,8 @@ FROM condaforge/miniforge3:24.7.1-2
 
 LABEL maintainer="cgphelp@sanger.ac.uk" \
       uk.ac.sanger.cgp="Cancer, Ageing and Somatic Mutation, Wellcome Trust Sanger Institute" \
-      version="1.4.1" \
-      description="cgp-methpipe_1.4.1-miniforge"
+      version="1.4.3" \
+      description="cgp-methpipe_1.4.3"
 
 ENV OPT /opt/wtsi-cgp
 ENV USER=service
